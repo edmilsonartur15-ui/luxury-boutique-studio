@@ -1,27 +1,499 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="pt-BR">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUXE BOUTIQUE - Roupas de Luxo Premium</title>
-    <meta name="description" content="Descubra nossa coleção exclusiva de roupas de luxo. Peças únicas para quem busca elegância e sofisticação." />
+    <title>LUXE BOUTIQUE - Moda Luxury Premium</title>
+    <meta name="description" content="Descubra nossa coleção exclusiva de moda luxury. Peças únicas para quem busca elegância e sofisticação." />
     <meta name="author" content="Luxe Boutique" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <meta property="og:title" content="LUXE BOUTIQUE - Roupas de Luxo Premium" />
-    <meta property="og:description" content="Descubra nossa coleção exclusiva de roupas de luxo. Peças únicas para quem busca elegância e sofisticação." />
+    <link rel="stylesheet" href="styles.css">
+    
+    <meta property="og:title" content="LUXE BOUTIQUE - Moda Luxury Premium" />
+    <meta property="og:description" content="Descubra nossa coleção exclusiva de moda luxury. Peças únicas para quem busca elegância e sofisticação." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
+    
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+</head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1 class="logo-text">LUXE BOUTIQUE</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="#" class="nav-link">Feminino</a>
+                    <a href="#" class="nav-link">Masculino</a>
+                    <a href="#" class="nav-link">Acessórios</a>
+                    <a href="#" class="nav-link">Coleções</a>
+                </nav>
+
+                <!-- Desktop Actions -->
+                <div class="desktop-actions">
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <button class="icon-btn cart-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="m16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-badge">0</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                    <svg class="close-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu hidden" id="mobileMenu">
+                <nav class="mobile-nav">
+                    <a href="#" class="mobile-nav-link">Feminino</a>
+                    <a href="#" class="mobile-nav-link">Masculino</a>
+                    <a href="#" class="mobile-nav-link">Acessórios</a>
+                    <a href="#" class="mobile-nav-link">Coleções</a>
+                </nav>
+                <div class="mobile-actions">
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <button class="icon-btn cart-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <path d="m16 10a4 4 0 0 1-8 0"></path>
+                        </svg>
+                        <span class="cart-badge">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="assets/hero-luxury.jpg" alt="Coleção de Moda Luxuosa" class="hero-image" />
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Elegância
+                    <span class="hero-title-accent">Atemporal</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Descubra nossa coleção exclusiva de peças luxury, 
+                    cuidadosamente selecionadas para quem busca sofisticação 
+                    e qualidade incomparável.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn-luxury">
+                        Explorar Coleção
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12,5 19,12 12,19"></polyline>
+                        </svg>
+                    </button>
+                    <button class="btn-outline-luxury">
+                        Ver Lookbook
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Peças Exclusivas</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Marcas Luxury</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Atendimento VIP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Coleção Premium</h2>
+                <p class="section-subtitle">
+                    Peças exclusivas cuidadosamente selecionadas para sua elegância
+                </p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Produto 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-dress.jpg" alt="Vestido Elegante Premium" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Vestido Elegante Premium</h3>
+                        <p class="product-description">Elegância contemporânea em seda italiana</p>
+                        <div class="product-price">R$ 2.890,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-suit.jpg" alt="Terno Executivo Luxury" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Terno Executivo Luxury</h3>
+                        <p class="product-description">Alfaiataria premium sob medida</p>
+                        <div class="product-price">R$ 4.590,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-bag.jpg" alt="Bolsa Designer Collection" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Bolsa Designer Collection</h3>
+                        <p class="product-description">Couro legítimo com acabamento artesanal</p>
+                        <div class="product-price">R$ 1.890,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-blazer.jpg" alt="Blazer Sophistique" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Blazer Sophistique</h3>
+                        <p class="product-description">Corte refinado para a mulher moderna</p>
+                        <div class="product-price">R$ 3.450,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-heels.jpg" alt="Scarpin Elite" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Scarpin Elite</h3>
+                        <p class="product-description">Conforto e elegância em couro premium</p>
+                        <div class="product-price">R$ 1.650,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-watch.jpg" alt="Relógio Prestige" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Relógio Prestige</h3>
+                        <p class="product-description">Precisão suíça em design atemporal</p>
+                        <div class="product-price">R$ 8.750,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-sunglasses.jpg" alt="Óculos Glamour" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Óculos Glamour</h3>
+                        <p class="product-description">Proteção premium com estilo único</p>
+                        <div class="product-price">R$ 950,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-scarf.jpg" alt="Lenço Seda Francesa" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Lenço Seda Francesa</h3>
+                        <p class="product-description">Delicadeza francesa em seda pura</p>
+                        <div class="product-price">R$ 780,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-necklace.jpg" alt="Colar Diamantes" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Colar Diamantes</h3>
+                        <p class="product-description">Joalheria exclusiva com diamantes naturais</p>
+                        <div class="product-price">R$ 12.500,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 10 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-shirt.jpg" alt="Camisa Social Premium" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Camisa Social Premium</h3>
+                        <p class="product-description">Algodão egípcio com acabamento impecável</p>
+                        <div class="product-price">R$ 890,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 11 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-coat.jpg" alt="Casaco Inverno Luxury" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Casaco Inverno Luxury</h3>
+                        <p class="product-description">Elegância e aquecimento em lã merino</p>
+                        <div class="product-price">R$ 5.690,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 12 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-belt.jpg" alt="Cinto Couro Artesanal" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cinto Couro Artesanal</h3>
+                        <p class="product-description">Couro italiano com fivela exclusiva</p>
+                        <div class="product-price">R$ 650,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 13 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-trousers.jpg" alt="Calça Social Alfaiataria" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Calça Social Alfaiataria</h3>
+                        <p class="product-description">Corte perfeito em tecido nobre</p>
+                        <div class="product-price">R$ 1.250,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 14 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-clutch.jpg" alt="Clutch Noite Glamour" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Clutch Noite Glamour</h3>
+                        <p class="product-description">Elegância compacta para ocasiões especiais</p>
+                        <div class="product-price">R$ 1.350,00</div>
+                    </div>
+                </div>
+
+                <!-- Produto 15 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="assets/product-earrings.jpg" alt="Brincos Pérola Cultivada" />
+                        <div class="product-overlay">
+                            <button class="btn-luxury">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Brincos Pérola Cultivada</h3>
+                        <p class="product-description">Pérolas naturais em ouro 18k</p>
+                        <div class="product-price">R$ 2.890,00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="view-all-container">
+                <button class="btn-outline-luxury">Ver Toda Coleção</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="footer-title">LUXE BOUTIQUE</h3>
+                    <p class="footer-description">
+                        Sua boutique de luxo com as mais exclusivas peças de alta moda. 
+                        Elegância, sofisticação e qualidade em cada detalhe.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Loja</h4>
+                    <nav class="footer-nav">
+                        <a href="#" class="footer-link">Nova Coleção</a>
+                        <a href="#" class="footer-link">Feminino</a>
+                        <a href="#" class="footer-link">Masculino</a>
+                        <a href="#" class="footer-link">Acessórios</a>
+                        <a href="#" class="footer-link">Sale</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Atendimento</h4>
+                    <nav class="footer-nav">
+                        <a href="#" class="footer-link">Contato</a>
+                        <a href="#" class="footer-link">FAQ</a>
+                        <a href="#" class="footer-link">Trocas e Devoluções</a>
+                        <a href="#" class="footer-link">Guia de Tamanhos</a>
+                        <a href="#" class="footer-link">Cuidados</a>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-section-title">Newsletter</h4>
+                    <p class="newsletter-description">
+                        Receba as novidades exclusivas e ofertas especiais
+                    </p>
+                    <form class="newsletter-form">
+                        <input 
+                            type="email" 
+                            placeholder="Seu e-mail" 
+                            class="newsletter-input"
+                            required
+                        />
+                        <button type="submit" class="newsletter-btn">
+                            Inscrever-se
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2024 Luxe Boutique. Todos os direitos reservados.
+                </p>
+                <div class="footer-legal">
+                    <a href="#" class="footer-legal-link">Política de Privacidade</a>
+                    <a href="#" class="footer-legal-link">Termos de Uso</a>
+                    <a href="#" class="footer-legal-link">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
